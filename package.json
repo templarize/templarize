@@ -1,0 +1,24 @@
+{
+  "name": "templarize",
+  "version": "0.1.0",
+  "description": "A package to quickly build from template files",
+  "scripts": {
+    "format": "prettier --write 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minagishl/templarize.git"
+  },
+  "keywords": [
+    "templarize"
+  ],
+  "author": "minagishl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minagishl/templarize/issues"
+  },
+  "homepage": "https://github.com/minagishl/templarize#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
