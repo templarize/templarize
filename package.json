@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/minagishl/templarize.git"
+    "url": "https://github.com/templarize/templarize.git"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -21,12 +21,12 @@
   "keywords": [
     "templarize"
   ],
-  "author": "minagishl",
+  "author": "templarize",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/minagishl/templarize/issues"
+    "url": "https://github.com/templarize/templarize/issues"
   },
-  "homepage": "https://github.com/minagishl/templarize#readme",
+  "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
     "@types/node": "^20.11.25",
     "prettier": "^3.2.5",
