@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "A package to quickly build from template files",
   "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
     "format": "prettier --write 'src/**/*.ts'"
   },
   "repository": {
