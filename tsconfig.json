@@ -8,7 +8,7 @@
     "module": "CommonJS",
     "moduleDetection": "auto",
     "moduleResolution": "node",
-    "declaration": true,
+    "declaration": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
