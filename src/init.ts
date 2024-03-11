@@ -1,7 +1,14 @@
 import fs from 'fs';
+import path from 'path';
 
-export default function init(appName: string) {
-  const dirPath = `./.${appName}`;
+export default function init(appName: string, global: boolean) {
+  let dirPath: string;
+
+  if (global) {
+    dirPath = path.join(process.env.HOME || '', `.${appName}`);
+  } else {
+    dirPath = `./.${appName}`;
+  }
 
   if (fs.existsSync(dirPath)) {
     console.error(`${appName} directory already exists.`);

@@ -12,11 +12,19 @@ program.version(
   `Get current version of ${appName}`
 );
 
+// Show help
 program.helpOption('-h, --help', 'Show help');
 
-program.command('init', `Initialize ${appName}`).action(() => {
-  init(appName);
-});
+// Options
+program.option('-d, --debug', 'Output extra debugging');
+program.option('-g, --global', 'Create under user folder');
+
+program
+  .command('init')
+  .description(`Initialize ${appName}`)
+  .action(() => {
+    init(appName, program.opts().global);
+  });
 
 program.parse();
 
