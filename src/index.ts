@@ -1,43 +1,27 @@
-import fs from 'fs';
+import init from './init';
+import packagesJson from '../package.json';
+import { Command } from 'commander';
 
-const appName = 'templarize';
-const argv: string = process.argv[2];
+const program = new Command();
+const appName = packagesJson.name ?? 'templarize';
 
-// Get current version from package JSON
-function getVersion() {
-  fs.readFile('./package.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(`Failed to read package.json: ${err}`);
-      return;
-    }
+// Get current version
+program.version(
+  `${appName.charAt(0).toUpperCase() + appName.slice(1)} version ${packagesJson.version}`,
+  '-v, --version',
+  `Get current version of ${appName}`
+);
 
-    const packageJson = JSON.parse(data);
-    const version = packageJson.version;
+program.helpOption('-h, --help', 'Show help');
 
-    console.log(`Templarize Version: ${version}`);
-  });
-}
+program.command('init', `Initialize ${appName}`).action(() => {
+  init(appName);
+});
 
-if (argv === '--version' || argv === '-v') {
-  getVersion();
-}
+program.parse();
 
-function help() {
-  console.log(`Usage: ${appName} [--version | -v] [--init] [--help]`);
-}
-
-if (!argv || argv === '--help') {
-  help();
-}
-
-if (argv === '--init' || argv === '-i') {
-  const dirPath = `./.${appName}`;
-
-  fs.mkdir(dirPath, (err) => {
-    if (err) {
-      console.error(`Failed to create ${appName} directory: ${err}`);
-    } else {
-      console.log(`${appName} directory created successfully.`);
-    }
-  });
+// If nothing is specified
+if (program.args.length === 0) {
+  console.log(program.opts());
+  program.help();
 }
