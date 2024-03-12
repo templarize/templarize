@@ -8,7 +8,8 @@
   "scripts": {
     "remove": "rimraf dist",
     "dev": "ts-node src/index.ts",
-    "build": "npm run remove && tsc",
+    "build": "npm run remove && tsc && npm run minify",
+    "minify": "node terser.js",
     "prepare": "npm run build",
     "format": "prettier --write 'src/**/*.ts'"
   },
