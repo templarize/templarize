@@ -13,11 +13,12 @@ program.version(
 );
 
 // Show help
-program.helpOption('-h, --help', 'Show help');
+program.helpOption('-h, --help', 'Show help for commands');
 
 // Options
-program.option('-d, --debug', 'Output extra debugging');
-program.option('-g, --global', 'Create under user folder');
+program
+  .option('-d, --debug', 'Output extra debugging')
+  .option('-g, --global', 'Create under user folder');
 
 program
   .command('init')
@@ -27,9 +28,3 @@ program
   });
 
 program.parse();
-
-// If nothing is specified
-if (program.args.length === 0) {
-  console.log(program.opts());
-  program.help();
-}
