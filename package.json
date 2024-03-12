@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
-    "@types/node": "^20.11.25",
+    "@types/node": "^20.11.26",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
