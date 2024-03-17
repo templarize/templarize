@@ -3,12 +3,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [tsconfigPaths()],
-  build: {
-    minify: true,
-    rollupOptions: {
-      input: { main: './src/index.ts' },
-    },
-  },
   test: {
     include: ['tests/**/*.ts'],
     globals: true,

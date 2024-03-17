@@ -11,7 +11,9 @@
     "format": "prettier --write 'src/**/*.ts'",
     "minify": "node terser.js",
     "prepare": "yarn build",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
   },
   "repository": {
     "type": "git",
@@ -29,20 +31,21 @@
   "devDependencies": {
     "@types/node": "^20.11.26",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint": "^8.0.1",
+    "eslint": "^8.2.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "*",
+    "typescript": "^4.3.5",
     "vite": "^5.1.6",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0"
   },
   "dependencies": {
     "commander": "^12.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "rimraf": "^5.0.5",
     "terser": "^5.29.1"
   }

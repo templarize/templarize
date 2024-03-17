@@ -1,25 +1,26 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'fs'
+import path from 'path'
 
-export default function init(appName: string, global: boolean) {
-  let dirPath: string;
+export default function init(appName: string, global: boolean): void {
+  let dirPath: string
+  const homeDir: string = process.env.HOME ?? process.env.USERPROFILE ?? ''
 
   if (global) {
-    dirPath = path.join(process.env.HOME || '', `.${appName}`);
+    dirPath = path.join(homeDir, `.${appName}`)
   } else {
-    dirPath = `./.${appName}`;
+    dirPath = `./.${appName}`
   }
 
   if (fs.existsSync(dirPath)) {
-    console.error(`${appName} directory already exists.`);
-    return;
+    console.error(`${appName} directory already exists.`)
+    return
   }
 
-  fs.mkdir(dirPath, (err) => {
-    if (err) {
-      console.error(`Failed to create ${appName} directory: ${err}`);
+  fs.mkdir(dirPath, (err: any) => {
+    if (err !== null) {
+      console.error(`Failed to create ${appName} directory: ${err}`)
     } else {
-      console.log(`${appName} directory created successfully.`);
+      console.log(`${appName} directory created successfully.`)
     }
-  });
+  })
 }

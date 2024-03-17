@@ -19,8 +19,8 @@
     "removeComments": true,
     "skipLibCheck": false,
     "strict": true,
-    "strictNullChecks": false,
-    "strictPropertyInitialization": false,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "target": "ES2019",
     "typeRoots": ["./src", "./node_modules/@types"],
     "paths": {
