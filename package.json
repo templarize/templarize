@@ -17,9 +17,6 @@
     "type": "git",
     "url": "https://github.com/templarize/templarize.git"
   },
-  "engines": {
-    "node": "^18.17.0 || >=20.5.0"
-  },
   "keywords": [
     "templarize"
   ],
@@ -31,9 +28,15 @@
   "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
     "@types/node": "^20.11.26",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2",
+    "typescript": "*",
     "vite": "^5.1.6",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0"
