@@ -6,12 +6,12 @@
     "templarize": "cli.js"
   },
   "scripts": {
-    "remove": "rimraf dist",
+    "build": "tsc && npm run minify",
     "dev": "ts-node src/index.ts",
-    "build": "npm run remove && tsc && npm run minify",
+    "format": "prettier --write 'src/**/*.ts'",
     "minify": "node terser.js",
-    "prepare": "npm run build",
-    "format": "prettier --write 'src/**/*.ts'"
+    "prepare": "yarn build",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,10 @@
     "@types/node": "^20.11.26",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.4.0"
   },
   "dependencies": {
     "commander": "^12.0.0",
