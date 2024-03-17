@@ -17,7 +17,7 @@
     "noUnusedParameters": true,
     "outDir": "./dist",
     "removeComments": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
