@@ -7,7 +7,7 @@
     "templarize": "cli.js"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && yarn minify",
+    "build": "rimraf dist && tsc --project tsconfig.build.json && yarn minify",
     "dev": "ts-node src/index.ts",
     "format": "prettier --write 'src/**/*.ts'",
     "minify": "node terser.js",
