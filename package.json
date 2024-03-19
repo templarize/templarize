@@ -4,13 +4,13 @@
   "description": "A package to quickly build from template files",
   "type": "commonjs",
   "bin": {
-    "templarize": "cli.js"
+    "templarize": "scripts/cli.js"
   },
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json && yarn minify",
     "dev": "ts-node src/index.ts",
     "format": "prettier --write 'src/**/*.ts'",
-    "minify": "node terser.js",
+    "minify": "node scripts/terser.js",
     "prepare": "husky && yarn build",
     "test": "vitest",
     "lint": "eslint src --ext .ts",
