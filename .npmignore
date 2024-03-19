@@ -4,15 +4,20 @@ package-lock.json
 yarn.lock
 
 .vscode
-*.test.js
 .github
 .editorconfig
 coverage/
 .swcrc
 .prettierrc
 tsconfig.json
+tsconfig.build.json
+vitest.config.*
 src/
-test/
+tests/
 .DS_Store
 .templarize
-assets/
+.eslintignore
+.eslintrc.json 
+.gitattributes
+.husky/
+scripts/*
