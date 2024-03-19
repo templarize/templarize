@@ -1,2 +1,1 @@
-$ echo "export PATH=\"$(dirname $(which node)):\$PATH\"" > ~/.huskyrc
-=
+export PATH="$PATH:`yarn global bin`"
