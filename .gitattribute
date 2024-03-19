@@ -1,1 +1,2 @@
 .husky/**/* linguist-vendored
+.husky/pre-commit linguist-vendored
