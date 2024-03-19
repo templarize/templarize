@@ -6,8 +6,11 @@ labels: ''
 assignees: 'minagishl'
 ---
 
-**Describe the changes you'd like to make**
-A clear and concise description of what you want to change.
+**Describe the changes you have made.**  
+Describe clearly and concisely what you have changed.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**How will you solve the problem?**  
+Describe clearly and concisely.
+
+**Add context**.  
+Add any additional context or screenshots about the feature request here.
