@@ -1,6 +1,8 @@
 # Templarize
 
-### Coming soon ...
+> This package is currently under development  
+> It's not finished at all, so I don't recommend downloading it.  
+> We will announce it from [developer X (Twitter)](https://twitter.com/minagishl) when it is completed.
 
 ## Installation
 
