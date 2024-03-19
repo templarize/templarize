@@ -54,6 +54,9 @@
     "terser": "^5.29.1"
   },
   "lint-staged": {
-    "src/**/*.ts": "yarn lint:fix && yarn format"
+    "*.{js,ts}": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
   }
 }
