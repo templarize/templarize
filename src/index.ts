@@ -27,4 +27,7 @@ program
     init(appName, Boolean(program.opts().global));
   });
 
+// Generate
+// program.command('generate <name>').description(`Generate a new file`);
+
 program.parse();
