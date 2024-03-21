@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
+    "@types/columnify": "^1.5.4",
     "@types/node": "^20.11.26",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "6.0.0",
@@ -49,6 +50,7 @@
     "vitest": "^1.4.0"
   },
   "dependencies": {
+    "columnify": "^1.6.0",
     "commander": "^12.0.0",
     "terser": "^5.29.1"
   },
