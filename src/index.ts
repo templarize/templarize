@@ -10,7 +10,7 @@ const appName = packagesJson.name ?? 'templarize';
 program.version(
   `${appName.charAt(0).toUpperCase() + appName.slice(1)} version ${packagesJson.version}`,
   '-v, --version',
-  `Get current version of ${appName}`
+  `Get current version of ${appName}`,
 );
 
 // Show help
