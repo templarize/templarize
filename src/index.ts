@@ -1,4 +1,5 @@
 import init from './init';
+import list from './list';
 import packagesJson from '../package.json';
 import { Command } from 'commander';
 
@@ -9,7 +10,7 @@ const appName = packagesJson.name ?? 'templarize';
 program.version(
   `${appName.charAt(0).toUpperCase() + appName.slice(1)} version ${packagesJson.version}`,
   '-v, --version',
-  `Get current version of ${appName}`
+  `Get current version of ${appName}`,
 );
 
 // Show help
@@ -25,6 +26,26 @@ program
   .description(`Initialize ${appName}`)
   .action(() => {
     init(appName, Boolean(program.opts().global));
+  });
+
+// List
+program
+  .command('list')
+  .description(`List all files`)
+  .action(() => {
+    void list(`./.${appName}`);
+  });
+
+// Generate
+program
+  .command('generate [name]')
+  .description(`Generate a new file`)
+  .action((name?: string) => {
+    if (name !== undefined) {
+      console.log(`Generate a new file: ${name}`);
+    } else {
+      console.error('Please provide a name');
+    }
   });
 
 program.parse();

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { checkDirectoryExists } from './utils';
 
 export default function init(appName: string, global: boolean): void {
   let dirPath: string;
@@ -11,7 +12,7 @@ export default function init(appName: string, global: boolean): void {
     dirPath = `./.${appName}`;
   }
 
-  if (fs.existsSync(dirPath)) {
+  if (checkDirectoryExists(dirPath)) {
     console.error(`${appName} directory already exists.`);
     return;
   }
