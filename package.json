@@ -30,8 +30,6 @@
   },
   "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.2.2",
-    "@commitlint/config-conventional": "^19.2.2",
     "@types/columnify": "^1.5.4",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
