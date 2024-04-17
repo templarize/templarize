@@ -13,6 +13,7 @@
     "minify": "node scripts/terser.js",
     "prepare": "husky && yarn build",
     "test": "vitest",
+    "test:watch": "vitest --watch",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix"
   },
