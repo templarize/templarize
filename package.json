@@ -9,13 +9,16 @@
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json && yarn minify",
     "dev": "ts-node src/index.ts",
-    "format": "prettier --write 'src/**/*.ts'",
+    "format": "prettier --write .",
+    "format:check": "prettier --check 'src/**/*.ts'",
+    "format:write": "prettier --write 'src/**/*.ts'",
     "minify": "node scripts/terser.js",
     "prepare": "husky && yarn build",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --ext .ts --fix"
+    "lint:fix": "eslint src --ext .ts --fix",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
