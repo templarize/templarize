@@ -2,6 +2,19 @@
   "name": "templarize",
   "version": "0.1.0",
   "description": "A package to quickly build from template files",
+  "keywords": [
+    "templarize"
+  ],
+  "homepage": "https://github.com/templarize/templarize#readme",
+  "bugs": {
+    "url": "https://github.com/templarize/templarize/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/templarize/templarize.git"
+  },
+  "license": "MIT",
+  "author": "templarize",
   "type": "commonjs",
   "bin": {
     "templarize": "scripts/cli.js"
@@ -9,26 +22,28 @@
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json && yarn minify",
     "dev": "ts-node src/index.ts",
-    "format": "prettier --write 'src/**/*.ts'",
+    "format": "prettier --write .",
+    "format:check": "prettier --check 'src/**/*.ts'",
+    "format:write": "prettier --write 'src/**/*.ts'",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
     "minify": "node scripts/terser.js",
     "prepare": "husky && yarn build",
     "test": "vitest",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --ext .ts --fix"
+    "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/templarize/templarize.git"
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
   },
-  "keywords": [
-    "templarize"
-  ],
-  "author": "templarize",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/templarize/templarize/issues"
+  "dependencies": {
+    "columnify": "^1.6.0",
+    "commander": "^12.0.0",
+    "terser": "^5.30.3"
   },
-  "homepage": "https://github.com/templarize/templarize#readme",
   "devDependencies": {
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
@@ -50,16 +65,5 @@
     "typescript": "5.4.5",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.5.0"
-  },
-  "dependencies": {
-    "columnify": "^1.6.0",
-    "commander": "^12.0.0",
-    "terser": "^5.30.3"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "yarn lint:fix",
-      "yarn format"
-    ]
   }
 }
