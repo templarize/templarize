@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { checkDirectoryExists } from './utils';
+import { checkDirectoryExists } from '~/utils';
 
 export default function init(appName: string, global: boolean): void {
   let dirPath: string;

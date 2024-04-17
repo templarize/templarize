@@ -1,16 +1,17 @@
-import init from './init';
-import list from './list';
-import packagesJson from '../package.json';
 import { Command } from 'commander';
+import { app } from '~/constants';
+
+// Load command functions
+import init from '~/commands/init';
+import list from '~/commands/list';
 
 const program = new Command();
-const appName = packagesJson.name ?? 'templarize';
 
 // Get current version
 program.version(
-  `${appName.charAt(0).toUpperCase() + appName.slice(1)} version ${packagesJson.version}`,
+  `${app.name.charAt(0).toUpperCase() + app.name.slice(1)} version ${app.version}`,
   '-v, --version',
-  `Get current version of ${appName}`,
+  `Get current version of ${app.name}`,
 );
 
 // Show help
@@ -23,9 +24,9 @@ program
 
 program
   .command('init')
-  .description(`Initialize ${appName}`)
+  .description(`Initialize ${app.name}`)
   .action(() => {
-    init(appName, Boolean(program.opts().global));
+    init(app.name, Boolean(program.opts().global));
   });
 
 // List
@@ -33,7 +34,7 @@ program
   .command('list')
   .description(`List all files`)
   .action(() => {
-    void list(`./.${appName}`);
+    void list(`./.${app.name}`);
   });
 
 // Generate
