@@ -1,4 +1,4 @@
-import readConfig from '~/readConfig';
+import { readConfig } from '~/utils';
 import { test } from 'vitest';
 import path from 'path';
 

@@ -1,5 +1,4 @@
-import readConfig from './readConfig';
-import { checkDirectoryExists } from './utils';
+import { readConfig, checkDirectoryExists } from '../utils';
 import columnify from 'columnify';
 
 export default async function list(dir: string): Promise<void> {

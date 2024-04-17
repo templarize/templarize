@@ -1,7 +1,9 @@
-import init from './init';
-import list from './list';
 import packagesJson from '../package.json';
 import { Command } from 'commander';
+
+// Load command functions
+import init from './commands/init';
+import list from './commands/list';
 
 const program = new Command();
 const appName = packagesJson.name ?? 'templarize';
