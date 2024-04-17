@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
+/**
+ * Reads the configuration files from the specified directory and returns an array of objects
+ * containing the name and description of each configuration.
+ *
+ * @param dir - The directory to read the configuration files from.
+ * @returns A promise that resolves to an array of objects containing the name and description
+ * of each configuration.
+ */
 export async function readConfig(
   dir: string,
 ): Promise<Array<{ name: string; description: string }>> {
@@ -40,6 +48,13 @@ export async function readConfig(
   return result;
 }
 
+/**
+ * Recursively retrieves all files in a directory.
+ *
+ * @param dirPath - The path of the directory to search.
+ * @param result - An array to store the paths of the found files.
+ * @returns A promise that resolves to an array of file paths.
+ */
 export async function getFiles(
   dirPath: string,
   result: string[],
@@ -61,6 +76,11 @@ export async function getFiles(
   }
 }
 
+/**
+ * Checks if a directory exists at the specified path.
+ * @param dirPath - The path of the directory to check.
+ * @returns A boolean indicating whether the directory exists or not.
+ */
 export function checkDirectoryExists(dirPath: string): boolean {
   return fs.existsSync(dirPath);
 }
