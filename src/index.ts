@@ -1,9 +1,9 @@
 import { Command } from 'commander';
-import { app } from './constants';
+import { app } from '~/constants';
 
 // Load command functions
-import init from './commands/init';
-import list from './commands/list';
+import init from '~/commands/init';
+import list from '~/commands/list';
 
 const program = new Command();
 
