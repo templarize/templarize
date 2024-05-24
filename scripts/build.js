@@ -1,14 +1,16 @@
 const { build } = require('esbuild');
-const glob = require('glob');
-const entryPoints = glob.sync('./src/**/*.ts');
+const path = require('path');
 
-const config = {
-  entryPoints,
-  outdir: './dist',
+const options = {
+  entryPoints: [path.resolve(__dirname, '../src/index.ts')],
+  outfile: path.resolve(__dirname, '../dist/index.js'),
   platform: 'node',
+  format: 'cjs',
+  bundle: true,
   minify: true,
 };
 
-build({
-  ...config,
+build(options).catch((err) => {
+  process.stderr.write(err.stderr);
+  process.exit(1);
 });
