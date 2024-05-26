@@ -1,7 +1,14 @@
+# Dependency directory
 node_modules/
-npm-debug.log
-yarn-error.log
 
+# Log files
+*.log
+
+# build directory
 dist/
+
+# Mac OS
 .DS_Store
+
+# test directory
 .templarize
