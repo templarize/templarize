@@ -31,9 +31,7 @@ export async function readConfig(
       for (const extension of supportedExtensions) {
         const configFilePath = `${configFile}${extension}`;
         if (fs.existsSync(configFilePath)) {
-          const { default: config } = await import(
-            path.join(process.cwd(), configFilePath)
-          );
+          const { default: config } = await import(configFilePath);
           const name = path.basename(path.dirname(configFilePath));
           result.push({
             name: name ?? '',

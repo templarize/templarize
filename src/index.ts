@@ -18,23 +18,25 @@ program.version(
 program.helpOption('-h, --help', 'Show help for commands');
 
 // Options
-program
-  .option('-d, --debug', 'Output extra debugging')
-  .option('-g, --global', 'Create under user folder');
+program.option('-d, --debug', 'Output extra debugging');
 
 program
   .command('init')
   .description(`Initialize ${app.name}`)
-  .action(() => {
-    init(app.name, Boolean(program.opts().global));
+  .option('-g, --global', 'Create under user folder')
+  .action(function (this: Command) {
+    const global = this.opts().global === true;
+    init(app.name, global);
   });
 
 // List
 program
   .command('list')
   .description(`List all files`)
-  .action(() => {
-    void list(`./.${app.name}`);
+  .option('-g, --global', 'List under user folder')
+  .action(function (this: Command) {
+    const global = this.opts().global === true;
+    void list(app.name, global);
   });
 
 // Generate
