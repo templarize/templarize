@@ -42,34 +42,6 @@ export async function readConfig(
 }
 
 /**
- * Recursively retrieves all files in a directory.
- *
- * @param dirPath - The path of the directory to search.
- * @param result - An array to store the paths of the found files.
- * @returns A promise that resolves to an array of file paths.
- */
-export async function getFiles(
-  dirPath: string,
-  result: string[],
-): Promise<string[]> {
-  try {
-    const files = await fs.promises.readdir(dirPath, { withFileTypes: true });
-    for (const file of files) {
-      const filePath = path.join(dirPath, file.name);
-      if (file.isDirectory()) {
-        await getFiles(filePath, result);
-      } else {
-        result.push(filePath);
-      }
-    }
-    return result;
-  } catch (err: any) {
-    console.error(err);
-    return [];
-  }
-}
-
-/**
  * Checks if a directory exists at the specified path.
  * @param dirPath - The path of the directory to check.
  * @returns A boolean indicating whether the directory exists or not.
