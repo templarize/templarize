@@ -15,18 +15,12 @@ export async function readConfig(
   const result: Array<{ name: string; description: string }> = [];
   const files = fs.readdirSync(dir);
 
+  const supportedExtensions = ['.ts', '.js', '.mts', '.cts', '.mjs', '.cjs'];
+
   for (const file of files) {
     const filePath = path.join(dir, file);
     if (fs.statSync(filePath).isDirectory()) {
       const configFile = path.join(filePath, 'config');
-      const supportedExtensions = [
-        '.ts',
-        '.js',
-        '.mts',
-        '.cts',
-        '.mjs',
-        '.cjs',
-      ];
 
       for (const extension of supportedExtensions) {
         const configFilePath = `${configFile}${extension}`;
