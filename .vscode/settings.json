@@ -5,5 +5,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier formatter.
   "editor.formatOnSave": true,
   "cSpell.words": ["columnify"], // Perform formatting when saving files
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint",
+    "source.addMissingImports"
+  ]
 }
