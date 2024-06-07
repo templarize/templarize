@@ -28,7 +28,8 @@ export async function readConfig(
             const { default: config } = await import(configFilePath);
             const name = path.basename(path.dirname(configFilePath));
             result.push({
-              name: name ?? '',
+              // Use the name of the directory as the name of the configuration
+              name: config?.name ?? name ?? '',
               description: config.description,
             });
             break;

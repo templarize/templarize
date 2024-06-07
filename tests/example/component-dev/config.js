@@ -1,4 +1,5 @@
 module.exports = {
+  name: 'component dev',
   description: 'Create a new component (dev)',
   prompts: [
     {
