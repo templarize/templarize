@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "rimraf dist && node scripts/build.js",
-    "dev": "ts-node src/index.ts",
+    "dev": "tsx src/index.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check 'src/**/*.ts'",
     "format:write": "prettier --write 'src/**/*.ts'",
@@ -62,7 +62,7 @@
     "prettier": "^3.2.5",
     "rimraf": "^5.0.7",
     "sort-package-json": "^2.10.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.16.2",
     "typescript": "5.4.5",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
