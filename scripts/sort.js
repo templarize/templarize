@@ -176,10 +176,10 @@ fs.readFile(packageJsonPath, 'utf8', (err, data) => {
   // Apply sorting
   const sortedPackageJson = sortObjectKeys(packageJson, defaultSortOrder);
 
-  // Write sorted content
+  // Write sorted content with a trailing newline
   fs.writeFile(
     packageJsonPath,
-    JSON.stringify(sortedPackageJson, null, 2),
+    JSON.stringify(sortedPackageJson, null, 2) + '\n', // Add a newline at the end
     (writeErr) => {
       if (writeErr) {
         console.error('Error writing package.json:', writeErr);
