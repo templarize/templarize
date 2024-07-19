@@ -7,6 +7,6 @@ test('reads config', async ({ expect }) => {
   const configs = await readConfig(configDir);
   expect(configs).toEqual([
     { name: 'component', description: 'Create a new component' },
-    { name: 'component-dev', description: 'Create a new component (dev)' },
+    { name: 'component dev', description: 'Create a new component (dev)' },
   ]);
 });

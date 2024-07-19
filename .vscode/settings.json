@@ -3,5 +3,10 @@
   "typescript.validate.enable": true,
   "typescript.format.enable": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier formatter.
-  "editor.formatOnSave": true // Perform formatting when saving files
+  "editor.formatOnSave": true,
+  "cSpell.words": ["columnify"], // Perform formatting when saving files
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint",
+    "source.addMissingImports"
+  ]
 }

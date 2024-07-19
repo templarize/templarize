@@ -9,7 +9,7 @@ export default function init(appName: string, global: boolean): void {
   if (global) {
     dirPath = path.join(homeDir, `.${appName}`);
   } else {
-    dirPath = `./.${appName}`;
+    dirPath = path.join(process.cwd(), `./.${appName}`);
   }
 
   if (checkDirectoryExists(dirPath)) {
