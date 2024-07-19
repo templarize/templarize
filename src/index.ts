@@ -9,7 +9,7 @@ const program = new Command();
 
 // Get current version
 program.version(
-  `${app.name.charAt(0).toUpperCase() + app.name.slice(1)} version ${app.version}`,
+  app.version,
   '-v, --version',
   `Get current version of ${app.name}`,
 );
