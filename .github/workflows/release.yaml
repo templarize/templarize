@@ -7,7 +7,7 @@ on:
 
 jobs:
   check-version:
-    name: Check package.json version
+    name: Check version
     runs-on: ubuntu-latest
     outputs:
       version-changed: ${{ steps.check.outputs.version-changed }}
