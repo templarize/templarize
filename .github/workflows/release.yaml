@@ -9,7 +9,6 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,15 +16,23 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '22.4.x'
 
       - name: Install dependencies
         run: yarn install
 
+      - name: Check version change
+        id: version-check
+        run: |
+          git fetch
+          git diff --exit-code HEAD^ HEAD package.json || echo "VERSION_CHANGED=true" >> $GITHUB_ENV
+
       - name: Build project
+        if: env.VERSION_CHANGED == 'true'
         run: yarn build
 
       - name: Publish to NPM
+        if: env.VERSION_CHANGED == 'true'
         run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
